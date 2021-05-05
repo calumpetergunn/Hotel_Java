@@ -14,7 +14,7 @@ public class HotelTest {
     @Before
     public void setUp(){
         hotel = new Hotel();
-        bedroom = new Bedroom(11, 2, "double");
+        bedroom = new Bedroom(11, 2, "double", 20);
         conferenceRoom = new ConferenceRoom("Boardroom", 10);
         guest = new Guest("Purple Fantasia");
         booking = new Booking(bedroom, 3);
@@ -64,5 +64,11 @@ public class HotelTest {
     public void canBookRoom(){
         Booking booking = hotel.bookRoom(bedroom, 3);
         assertEquals(3, booking.getNightsBooked());
+    }
+
+    @Test
+    public void canGetBill(){
+        assertEquals(60, hotel.billForBooking(booking));
+
     }
 }

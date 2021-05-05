@@ -23,5 +23,10 @@ public class Hotel {
         Booking booking = new Booking(bedroom, nightsBooked);
         return booking;
     }
+
+    public int billForBooking(Booking booking) {
+        int totalCost = booking.getNightsBooked() * booking.getBedroom().getNightlyRate();
+        return totalCost;
+    }
 }
 

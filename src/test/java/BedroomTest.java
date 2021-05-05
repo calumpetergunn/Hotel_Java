@@ -10,7 +10,7 @@ public class BedroomTest {
 
     @Before
     public void setUp(){
-        bedroom = new Bedroom(11, 2, "double");
+        bedroom = new Bedroom(11, 2, "double", 20);
         guest = new Guest("Purple Fantasia");
     }
 
@@ -46,6 +46,11 @@ public class BedroomTest {
         bedroom.addGuest(guest);
         bedroom.addGuest(guest);
         assertEquals(2, bedroom.getGuests());
+    }
+
+    @Test
+    public void hasNightlyRate(){
+        assertEquals(20, bedroom.getNightlyRate());
     }
 
 }
