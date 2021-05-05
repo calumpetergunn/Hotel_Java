@@ -17,5 +17,11 @@ public class Hotel {
     public int getConferenceRooms() {
         return this.conferenceRoomList.size();
     }
+
+
+    public Booking bookRoom(Bedroom bedroom, int nightsBooked) {
+        Booking booking = new Booking(bedroom, nightsBooked);
+        return booking;
+    }
 }
 
